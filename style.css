@@ -1,0 +1,73 @@
+/* Warm Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #FFDAB9; /* warm color */
+    overflow-x: hidden; /* prevent horizontal scroll */
+    position: relative;
+}
+
+/* Floating Elements */
+.floating {
+    position: absolute;      /* allows free movement */
+    z-index: 0;              /* behind content */
+    opacity: 0.3;            /* subtle effect */
+    pointer-events: none;    /* clicks pass through */
+    animation: floatY 6s ease-in-out infinite alternate,
+               floatX 8s ease-in-out infinite alternate; /* float diagonally */
+}
+<!-- Floating Coffee Elements -->
+<img id="bean1" class="floating" src="C:\Users\Dell\Downloads\pexels-andres-villamizar-185552101-34275441 (1).jpg" alt="Coffee Bean">
+<img id="bean2" class="floating" src="C:\Users\Dell\Downloads\pexels-raymagz-29766505.jpg"alt="Coffee Bean">
+<img id="cup1" class="floating" src="C:\Users\Dell\Downloads\pexels-j-s-mcduff-2149691498-31326998 (1).jpg"alt="Coffee Cup">
+<img id="steam1" class="floating" src="C:\Users\Dell\Downloads\pexels-galina-kolonitskaia-485466282-31247531.jpg"alt="Steam">
+
+<!-- Main content -->
+<div class="container">
+    <h1>Welcome to Coffee Bliss</h1>
+    <p>Enjoy cozy vibes and the best coffee in town!</p>
+</div>
+
+
+/* Individual positions and sizes */
+#bean1 { top: 50px; left: 20px; width: 50px; }
+#bean2 { top: 200px; right: 40px; width: 60px; }
+#cup1  { bottom: 100px; left: 150px; width: 80px; }
+#steam1{ top: 150px; left: 300px; width: 40px; }
+
+/* Vertical floating */
+@keyframes floatY {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/* Horizontal drifting */
+@keyframes floatX {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(15px); }
+}
+
+/* Main content container */
+.container {
+    position: relative;      /* above floating elements */
+    background-color: rgba(255, 248, 240, 0.85);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    max-width: 1000px;
+    z-index: 1;              /* on top of floating elements */
+}
+
+/* Images (sharp and small) */
+img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin: 10px;
+}
+
+
